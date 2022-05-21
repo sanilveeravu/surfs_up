@@ -36,5 +36,7 @@ Few additional queries on weather data was done to confirm on the same for June 
 1. Average precipitation was a bit high in december but at very low numbers
 ![summary_prcp_avg](Resources/summary_prcp_avg.png)
 
-2. Count of days where there was moderate rain over the years (precipitation >2.5) is a very low number.
+2. Count of days where there was moderate rain over the years (precipitation >2.5) is a very low number. 
+- June - 2 days in 2011, 2 days in 2013, none in rest of years. 
+- December - 13 days in 2010, 2 days in 2011 and 1 in 2014
 ![summary_prcp_high](Resources/summary_prcp_high.png)
