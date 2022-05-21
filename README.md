@@ -17,7 +17,7 @@ Below were the key temperature metrics
 
 June | December
 :-------------------------:|:-------------------------:
-![june_temperature](Resources/june_temperature.png)![dec_temperature](Resources/dec_temperature.png)
+![june_temperature](Resources/june_temperature.png)|![dec_temperature](Resources/dec_temperature.png)
 
 Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
 
