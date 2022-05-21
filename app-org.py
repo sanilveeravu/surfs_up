@@ -4,8 +4,7 @@ import pandas as pd
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-#from sqlalchemy.orm import Session
-from sqlalchemy.orm import relationship,scoped_session,sessionmaker,aliased
+from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
@@ -15,17 +14,14 @@ engine = create_engine("sqlite:///hawaii.sqlite")
 Base = automap_base()
 Base.prepare(engine,reflect=True)
 
-#Session = scoped_session(sessionmaker(bind=engine))
-SessionLocal = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
-
 #DB Classes
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 
 #Flast init
 app = Flask(__name__)
-app.session = scoped_session(SessionLocal)
-#session = Session(engine)
+
+session = Session(engine)
 
 #Welcome Route
 @app.route("/")
@@ -52,7 +48,7 @@ def precipitation():
 #station route
 @app.route("/api/v1.0/stations")
 def stations():
-  results = app.session.query(Station.station).all()  
+  results = session.query(Station.station).all()  
   stations = list(np.ravel(results))
   return jsonify(stations=stations)
 
